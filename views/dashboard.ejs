@@ -23,7 +23,7 @@
             <th scope="col" class="text-center">Response</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style="font-size: small;">
           <% datas.forEach(function (formdata,i) { %>
           <tr>
             <th scope="row"><%= i+1 %></th>
@@ -32,7 +32,7 @@
             <td><%= formdata.reason %></td>
 
             <td class="text-center" style="font-size: small;">
-              <%= formdata.date%>
+              <%= formdata.date.toString().split(' ').slice(0,5) %>
             </td>
             <td class="text-center">
               <a href="/edit/<%= formdata.id %>"
@@ -63,7 +63,7 @@
             <th scope="col">Response</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style="font-size: small;">
           <% lists.forEach(function (formdata,i) { %>
           <tr>
             <th scope="row"><%= i+1 %></th>
@@ -72,7 +72,7 @@
             <td><%= formdata.reason %></td>
 
             <td style="font-size: small;" class="text-center">
-              <%= formdata.date %>
+              <%= formdata.date.toString().slice(0,3) %>
             </td>
 
             <td>
@@ -100,7 +100,7 @@
             <th scope="col">Response</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style="font-size: small;">
           <% lists1.forEach(function (formdata,i) { %>
           <tr>
             <th scope="row"><%= i+1 %></th>

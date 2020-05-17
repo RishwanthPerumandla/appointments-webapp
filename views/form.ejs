@@ -43,7 +43,7 @@
             name="date"
             type="datetime-local"
             value="2020-05-15T13:45:00"
-            id="example-datetime-local-input"
+            id="example-datetime-local-input" required
           />
         </div>
       </div>
@@ -55,7 +55,7 @@
             class="form-control"
             id="name"
             name="name"
-            placeholder="name"
+            placeholder="name" required
           />
         </div>
       </div>
@@ -67,7 +67,7 @@
             class="form-control"
             id="userid"
             name="userid"
-            placeholder="Enter your StudentID/EmployeeID"
+            placeholder="Enter your StudentID/EmployeeID" required
           />
         </div>
       </div>
@@ -78,7 +78,7 @@
             class="form-control"
             name="reason"
             id="reason"
-            placeholder="Enter the Reason for the Appointment"
+            placeholder="Enter the Reason for the Appointment" required
           ></textarea>
         </div>
       </div>
@@ -90,7 +90,7 @@
             class="form-control"
             name="email"
             id="email"
-            placeholder="Email"
+            placeholder="Email" required
           />
         </div>
       </div>
@@ -100,9 +100,9 @@
           <input
             type="number"
             class="form-control"
-            id="phoneno"
+            id="phone"
             name="phoneno"
-            placeholder="phoneno"
+            placeholder="phoneno" required
           />
         </div>
       </div>
@@ -119,62 +119,6 @@
 </div>
 
 
-<script>
+ 
 
-
-  function post() {
-    var field1 = $("#name").val();
-    var field2 = $("#subject").val();
-    var field3 = $("#experience").val();
-    var field4 = $("#qualification").val();
-    var field5 = $("#organisation").val();
-    var field6 = $("#email").val();
-    var field7 = $("#phoneno").val();
-    var field8 = $("#tuitionmode option:selected").text();
-    var field9 = $("#p1").val();
-    var field11 = $("#p2").val();
-    var field12 = $("#address").val();
-
-    if (field1 == "") {
-      alert("Please Fill Your Name");
-      document.getElementById("name").focus();
-      return false;
-    }
-    if (field2 == "") {
-      alert("Please Fill Your Subject Expertise");
-      document.getElementById("subject").focus();
-      return false;
-    }
-    if (field3 == "") {
-      alert("Please Fill Your Experience");
-      document.getElementById("experience").focus();
-      return false;
-    }
-    if (field4 == "") {
-      alert("Please Fill Your Qualification");
-      document.getElementById("qualification").focus();
-      return false;
-    }
-    if (field5 == "") {
-      alert("Please Fill Your organisation Name");
-      document.getElementById("organisation").focus();
-      return false;
-    }
-    if (field6 == "") {
-      alert("Please Fill Your Email");
-      document.getElementById("email").focus();
-      return false;
-    }
-    if (field7 == "" || field7.length > 10 || field7.length < 10) {
-      alert("Please Fill Your Mobile Number");
-      document.getElementById("phoneno").focus();
-      return false;
-    }
-
-  
-
-    return false;
-  }
-
-
-</script>
+</script> 

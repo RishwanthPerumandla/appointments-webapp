@@ -17,7 +17,7 @@ background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, F
 	background: #B993D6;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+width: 100%;
 }
 
 .redirect{
@@ -28,3 +28,18 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
 	height: 100vh;
 
 }
+
+
+h2 {
+	text-align: center;
+  }
+  
+  table caption {
+	  padding: .5em 0;
+  }
+  
+  @media screen and (max-width: 767px) {
+	table caption {
+	  border-bottom: 1px solid #ddd;
+	}
+  }

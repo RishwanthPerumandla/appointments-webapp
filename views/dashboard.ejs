@@ -1,123 +1,86 @@
 <div class="dashboard">
+  <h1 class="text-center">Dashboard</h1>
+  <p class="lead mb-3 title text-center">
+    Welcome <%= user.name %>, <%= user.role %> |
+    <a href="/users/logout" class="btn btn-secondary ml-auto">Logout</a>
+  </p>
+
+  <br /><br /><br />
+
   <div class="container">
-    <h1 class="mt-4">Dashboard</h1>
-    <p class="lead mb-3 title">
-      Welcome <%= user.name %>, <%= user.role %> |
-      <a href="/users/logout" class="btn btn-secondary ml-auto">Logout</a>
-    </p>
+    <h2 class="text-center">Appointment Requests</h2>
+    <br />
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Role</th>
+          <th scope="col">Reason</th>
 
-    <br /><br /><br />
+          <th scope="col" class="text-center">Date&Time</th>
+          <th scope="col" class="text-center">Response</th>
+        </tr>
+      </thead>
+      <tbody style="font-size: small;">
+        <% datas.forEach(function (formdata,i) { %>
+        <tr>
+          <th scope="row"><%= i+1 %></th>
+          <td><%= formdata.name %></td>
+          <td><%= formdata.role %></td>
+          <td><%= formdata.reason %></td>
 
-    <div class="container">
-      <h2 class="text-center">Appointment Requests</h2>
-      <br />
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Role</th>
-            <th scope="col">Reason</th>
+          <td class="text-center" style="font-size: small;">
+            <%= formdata.date.toString().split(' ').slice(0,5) %>
+          </td>
+          <td class="text-center">
+            <a href="/edit/<%= formdata.id %>"
+              ><button class="btn btn-success">Approve</button></a
+            >
+            <a href="/delete/<%= formdata.id %>"
+              ><button class="btn btn-danger">Decline</button></a
+            >
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
 
-            <th scope="col" class="text-center">Date&Time</th>
-            <th scope="col" class="text-center">Response</th>
-          </tr>
-        </thead>
-        <tbody style="font-size: small;">
-          <% datas.forEach(function (formdata,i) { %>
-          <tr>
-            <th scope="row"><%= i+1 %></th>
-            <td><%= formdata.name %></td>
-            <td><%= formdata.role %></td>
-            <td><%= formdata.reason %></td>
+  <div class="container">
+    <h2 class="text-center">Appointment List</h2>
+    <br />
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Role</th>
+          <th scope="col">Reason</th>
 
-            <td class="text-center" style="font-size: small;">
-              <%= formdata.date.toString().split(' ').slice(0,5) %>
-            </td>
-            <td class="text-center">
-              <a href="/edit/<%= formdata.id %>"
-                ><button class="btn btn-success">Approve</button></a
-              >
-              <a href="/delete/<%= formdata.id %>"
-                ><button class="btn btn-danger">Decline</button></a
-              >
-            </td>
-          </tr>
+          <th scope="col" class="text-center">Date&Time</th>
+          <th scope="col">Response</th>
+        </tr>
+      </thead>
+      <tbody style="font-size: small;">
+        <% lists.forEach(function (formdata,i) { %>
+        <tr>
+          <th scope="row"><%= i+1 %></th>
+          <td><%= formdata.name %></td>
+          <td><%= formdata.role %></td>
+          <td><%= formdata.reason %></td>
+
+          <td style="font-size: small;" class="text-center">
+            <%= formdata.date.toString().split(' ').slice(0,5) %>
+          </td>
+
+          <td>
+            Accepted
+          </td>
+
           <% }) %>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="container">
-      <h2 class="text-center">Appointment List</h2>
-      <br />
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Role</th>
-            <th scope="col">Reason</th>
-
-            <th scope="col" class="text-center">Date&Time</th>
-            <th scope="col">Response</th>
-          </tr>
-        </thead>
-        <tbody style="font-size: small;">
-          <% lists.forEach(function (formdata,i) { %>
-          <tr>
-            <th scope="row"><%= i+1 %></th>
-            <td><%= formdata.name %></td>
-            <td><%= formdata.role %></td>
-            <td><%= formdata.reason %></td>
-
-            <td style="font-size: small;" class="text-center">
-              <%= formdata.date.toString().slice(0,3) %>
-            </td>
-
-            <td>
-              Accepted
-            </td>
-
-            <% }) %>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="container">
-      <h2 class="text-center">Declined List</h2>
-      <br />
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Role</th>
-            <th scope="col">Reason</th>
-
-            <th scope="col" class="text-center">Date&Time</th>
-            <th scope="col">Response</th>
-          </tr>
-        </thead>
-        <tbody style="font-size: small;">
-          <% lists1.forEach(function (formdata,i) { %>
-          <tr>
-            <th scope="row"><%= i+1 %></th>
-            <td><%= formdata.name %></td>
-            <td><%= formdata.role %></td>
-            <td><%= formdata.reason %></td>
-            <td style="font-size: small;" class="text-center">
-              <%= formdata.date %>
-            </td>
-            <td>
-              Declined
-            </td>
-            <% }) %>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
-

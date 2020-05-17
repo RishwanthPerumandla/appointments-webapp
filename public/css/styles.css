@@ -30,16 +30,20 @@ width: 100%;
 }
 
 
+@media (min-width: 768px) {
+
+}
+
 h2 {
-	text-align: center;
-  }
-  
+  text-align: center;
+}
+
+table caption {
+	padding: .5em 0;
+}
+
+@media screen and (max-width: 767px) {
   table caption {
-	  padding: .5em 0;
+    border-bottom: 1px solid #ddd;
   }
-  
-  @media screen and (max-width: 767px) {
-	table caption {
-	  border-bottom: 1px solid #ddd;
-	}
-  }
+}

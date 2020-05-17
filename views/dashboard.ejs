@@ -48,7 +48,7 @@
   </div>
 
   <div class="container">
-    <h2 class="text-center">Appointment List</h2>
+    <h2 class="text-center">Accepted  Appointment List</h2>
     <br />
     <table class="table">
       <thead>
@@ -82,5 +82,44 @@
         </tr>
       </tbody>
     </table>
+
+
+  </div>
+  <div class="container">
+    <div class="container">
+      <h2 class="text-center">Declined Appointment List</h2>
+      <br />
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Reason</th>
+  
+            <th scope="col" class="text-center">Date&Time</th>
+            <th scope="col">Response</th>
+          </tr>
+        </thead>
+        <tbody style="font-size: small;">
+          <% lists1.forEach(function (formdata,i) { %>
+          <tr>
+            <th scope="row"><%= i+1 %></th>
+            <td><%= formdata.name %></td>
+            <td><%= formdata.role %></td>
+            <td><%= formdata.reason %></td>
+  
+            <td style="font-size: small;" class="text-center">
+              <%= formdata.date.toString().split(' ').slice(0,5) %>
+            </td>
+  
+            <td>
+              Declined
+            </td>
+  
+            <% }) %>
+          </tr>
+        </tbody>
+      </table>
   </div>
 </div>

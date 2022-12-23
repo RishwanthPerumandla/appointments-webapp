@@ -9,7 +9,7 @@
   "author": "Rishwanth Perumandla",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
